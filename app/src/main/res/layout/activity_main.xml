@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_700"
+    android:orientation="vertical"
+    tools:context=".ui.activity.MainActivity">
+
+    <ImageView
+        android:id="@+id/pokemon_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/teal_200"
+        android:contentDescription="Foto do pokémon"
+        android:padding="32dp"
+        android:src="@mipmap/bulbasaur" />
+
+    <TextView
+        android:id="@+id/pokemon_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/teal_700"
+        android:minHeight="100dp"
+        android:padding="16dp"
+        android:text="@string/pokemon_description_bulbasaur"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="16dp" />
+
+</LinearLayout>
