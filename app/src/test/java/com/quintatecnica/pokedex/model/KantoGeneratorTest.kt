@@ -1,6 +1,6 @@
 package com.quintatecnica.pokedex.model
 
-import com.quintatecnica.pokedex.model.generator.KantoGenerator
+import com.quintatecnica.pokedex.generator.KantoGenerator
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.equalTo
 import org.hamcrest.core.Is

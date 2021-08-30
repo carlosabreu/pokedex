@@ -31,7 +31,7 @@ class PokemonTest {
                 R.string.pokemon_description_pikachu
             )
         )
-
+        assertEquals("25 - Pikachu, ELECTRIC", pikachu.toString())
         Mockito.`when`(pikachu.toString()).thenReturn("Eu sou o pikachu")
         assertEquals("Eu sou o pikachu", pikachu.toString())
     }

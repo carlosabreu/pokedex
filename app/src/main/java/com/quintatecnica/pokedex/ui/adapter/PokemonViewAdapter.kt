@@ -11,11 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.quintatecnica.pokedex.R
 import com.quintatecnica.pokedex.helper.NumberFormatHelper
 import com.quintatecnica.pokedex.model.Pokemon
-import com.quintatecnica.pokedex.model.generator.KantoGenerator
+import com.quintatecnica.pokedex.model.PokemonRepository
 
 class PokemonViewAdapter : RecyclerView.Adapter<PokemonViewAdapter.PokemonViewHolder>() {
 
-    private val pokemonList = KantoGenerator().generate()
+    private val pokemonRepository = PokemonRepository()
+
+    private val pokemonList = ArrayList<Pokemon>()
 
     private val numberFormatHelper = NumberFormatHelper()
 
@@ -26,6 +28,12 @@ class PokemonViewAdapter : RecyclerView.Adapter<PokemonViewAdapter.PokemonViewHo
     private var selectedBackgroundColor: Drawable? = null
 
     private var unSelectedBackgroundColor: Drawable? = null
+
+    init {
+        pokemonRepository.requestPokemon {
+            pokemonList.addAll(it)
+        }
+    }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): PokemonViewHolder {
         val view = LayoutInflater.from(viewGroup.context)

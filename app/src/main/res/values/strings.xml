@@ -10,4 +10,7 @@
     <string name="pokemon_description_wartortle">Wartortle é um pokémon de tipo água que vem de squirtle e pode evoluir para blastoise. </string>
     <string name="pokemon_description_blastoise">blastoise é um pokémon de tipo água que vem de squirtle e wartortle.</string>
     <string name="pokemon_description_pikachu">Pikachu é um pokémon de tipo elétrico que vem de pichu e pode evoluir para raichu.</string>
+
+
+    <string name="pokemon_description_chikorita">Chikorita é um pokémon de tipo grama se transforma en Bayleef primeiro e en Meganium mais tarde.</string>
 </resources>
