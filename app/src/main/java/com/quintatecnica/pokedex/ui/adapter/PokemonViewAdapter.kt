@@ -29,6 +29,10 @@ class PokemonViewAdapter : RecyclerView.Adapter<PokemonViewAdapter.PokemonViewHo
 
     private var unSelectedBackgroundColor: Drawable? = null
 
+    private var selectedTextColor: Int? = null
+
+    private var unSelectedTextColor: Int? = null
+
     init {
         pokemonDAO.list {
             pokemonList.addAll(it)
@@ -39,6 +43,7 @@ class PokemonViewAdapter : RecyclerView.Adapter<PokemonViewAdapter.PokemonViewHo
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.pokemon_viewholder, viewGroup, false)
         initBackgroundColor(viewGroup.context)
+        initTextColor(viewGroup.context)
         return PokemonViewHolder(view)
     }
 
@@ -47,6 +52,14 @@ class PokemonViewAdapter : RecyclerView.Adapter<PokemonViewAdapter.PokemonViewHo
         holder.number.text = numberFormatHelper.formatNumberWith3Digits(currentPokemon.number)
         holder.name.text = currentPokemon.name
         holder.type.text = currentPokemon.type.toString()
+        configureClick(holder, currentPokemon)
+        treatSelectionColor(holder, holder.adapterPosition)
+    }
+
+    private fun configureClick(
+        holder: PokemonViewHolder,
+        currentPokemon: Pokemon
+    ) {
         holder.container.setOnClickListener {
             val oldIndex = lastClickedIndex
             lastClickedIndex = holder.adapterPosition
@@ -56,13 +69,18 @@ class PokemonViewAdapter : RecyclerView.Adapter<PokemonViewAdapter.PokemonViewHo
             notifyItemChanged(holder.adapterPosition)
             notifyItemChanged(oldIndex)
         }
-        treatSelectionColor(holder, holder.adapterPosition)
     }
 
     private fun treatSelectionColor(holder: PokemonViewHolder, position: Int) {
         val backgroundColor =
             if (lastClickedIndex == position) selectedBackgroundColor else unSelectedBackgroundColor
+        val textColor = if (lastClickedIndex == position) selectedTextColor else unSelectedTextColor
         holder.container.background = backgroundColor
+        textColor?.let {
+            holder.name.setTextColor(textColor)
+            holder.number.setTextColor(textColor)
+            holder.type.setTextColor(textColor)
+        }
     }
 
     override fun getItemCount() = pokemonList.size
@@ -72,6 +90,11 @@ class PokemonViewAdapter : RecyclerView.Adapter<PokemonViewAdapter.PokemonViewHo
             AppCompatResources.getDrawable(context, R.drawable.rounded_view_holder_selected)
         unSelectedBackgroundColor =
             AppCompatResources.getDrawable(context, R.drawable.rounded_view_holder_unselected)
+    }
+
+    private fun initTextColor(context: Context) {
+        selectedTextColor = context.getColor(R.color.white)
+        unSelectedTextColor = context.getColor(R.color.black)
     }
 
     class PokemonViewHolder(view: View) : RecyclerView.ViewHolder(view) {

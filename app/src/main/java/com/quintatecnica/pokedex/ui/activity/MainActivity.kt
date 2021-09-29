@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         pokemonViewAdapter.onClick = {
             pokemon_image.setImageResource(it.image(this))
             pokemon_description.text = getString(it.description(this))
+            main_picture_cardView.setCardBackgroundColor(getColor(it.type.colorResource(this)))
         }
     }
 }

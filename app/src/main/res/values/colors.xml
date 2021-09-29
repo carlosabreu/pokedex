@@ -2,9 +2,13 @@
 <resources>
     <color name="green">#285728</color>
     <color name="dark_green">#1C3D1C</color>
+    <color name="emerland">#2ECC71</color>
     <color name="dark_yellow">#828F1E</color>
+    <color name="yellow">#828F1E</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="pumpkin">#FF9C52</color>
+    <color name="sunflower">#FFD44F</color>
     <color name="black">#FF000000</color>
     <color name="gray_900">#121212</color>
     <color name="gray_800">#303030</color>
