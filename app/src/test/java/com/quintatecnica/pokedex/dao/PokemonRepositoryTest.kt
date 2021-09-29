@@ -1,6 +1,7 @@
-package com.quintatecnica.pokedex.model
+package com.quintatecnica.pokedex.dao
 
 import com.quintatecnica.pokedex.generator.KantoGenerator
+import com.quintatecnica.pokedex.model.Pokemon
 import org.junit.Test
 import org.mockito.Mockito
 import org.mockito.Mockito.never

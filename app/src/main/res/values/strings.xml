@@ -1,16 +1,15 @@
 <resources>
     <string name="app_name">Pokédex</string>
-    <string name="pokemon_description_bulbasaur">Bulbasaur é um pokémon de tipo grama e veneno se transforma en ivysaur primeiro e em venusaur mais tarde.</string>
+    <string name="pokemon_description_bulbasaur">Bulbasaur é um pokémon de tipo grama e veneno se transforma em ivysaur primeiro e em venusaur mais tarde.</string>
     <string name="pokemon_description_ivysaur">Ivysaur é um pokémon de tipo grama e veneno que vem de bulbasaur e pode evoluir para venusaur.</string>
     <string name="pokemon_description_venusaur">Venusaur é um pokémon de tipo grama e veneno que vem de bulbasaur e ivysaur.</string>
-    <string name="pokemon_description_charmander">Charmander é um pokémon de tipo fogo se transforma en charmeleon primeiro e en charizard mais tarde.</string>
+    <string name="pokemon_description_charmander">Charmander é um pokémon de tipo fogo se transforma em charmeleon primeiro e em charizard mais tarde.</string>
     <string name="pokemon_description_charmeleon">Charmeleon é um pokémon de tipo fogo que vem de charmander e pode evoluir para charizard. </string>
     <string name="pokemon_description_charizard">Charizard é um pokémon de tipo fogo e voador que vem de charmander e charmeleon.</string>
-    <string name="pokemon_description_squirtle">Squirtle é um pokémon de tipo água se transforma en wartortle primeiro e en blastoise mais tarde.</string>
+    <string name="pokemon_description_squirtle">Squirtle é um pokémon de tipo água se transforma em wartortle primeiro e em blastoise mais tarde.</string>
     <string name="pokemon_description_wartortle">Wartortle é um pokémon de tipo água que vem de squirtle e pode evoluir para blastoise. </string>
-    <string name="pokemon_description_blastoise">blastoise é um pokémon de tipo água que vem de squirtle e wartortle.</string>
+    <string name="pokemon_description_blastoise">Blastoise é um pokémon de tipo água que vem de squirtle e wartortle.</string>
     <string name="pokemon_description_pikachu">Pikachu é um pokémon de tipo elétrico que vem de pichu e pode evoluir para raichu.</string>
 
-
-    <string name="pokemon_description_chikorita">Chikorita é um pokémon de tipo grama se transforma en Bayleef primeiro e en Meganium mais tarde.</string>
+    <string name="pokemon_description_chikorita">Chikorita é um pokémon de tipo grama se transforma em Bayleef primeiro e em Meganium mais tarde.</string>
 </resources>

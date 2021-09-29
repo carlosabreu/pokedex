@@ -9,13 +9,13 @@ import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.quintatecnica.pokedex.R
+import com.quintatecnica.pokedex.dao.PokemonDAO
 import com.quintatecnica.pokedex.helper.NumberFormatHelper
 import com.quintatecnica.pokedex.model.Pokemon
-import com.quintatecnica.pokedex.model.PokemonRepository
 
 class PokemonViewAdapter : RecyclerView.Adapter<PokemonViewAdapter.PokemonViewHolder>() {
 
-    private val pokemonRepository = PokemonRepository()
+    private val pokemonDAO = PokemonDAO()
 
     private val pokemonList = ArrayList<Pokemon>()
 
@@ -30,7 +30,7 @@ class PokemonViewAdapter : RecyclerView.Adapter<PokemonViewAdapter.PokemonViewHo
     private var unSelectedBackgroundColor: Drawable? = null
 
     init {
-        pokemonRepository.requestPokemon {
+        pokemonDAO.list {
             pokemonList.addAll(it)
         }
     }
@@ -43,20 +43,20 @@ class PokemonViewAdapter : RecyclerView.Adapter<PokemonViewAdapter.PokemonViewHo
     }
 
     override fun onBindViewHolder(holder: PokemonViewHolder, position: Int) {
-        val currentPokemon = pokemonList[position]
+        val currentPokemon = pokemonList[holder.adapterPosition]
         holder.number.text = numberFormatHelper.formatNumberWith3Digits(currentPokemon.number)
         holder.name.text = currentPokemon.name
         holder.type.text = currentPokemon.type.toString()
         holder.container.setOnClickListener {
             val oldIndex = lastClickedIndex
-            lastClickedIndex = position
+            lastClickedIndex = holder.adapterPosition
             if (::onClick.isInitialized) {
                 onClick(currentPokemon)
             }
-            notifyItemChanged(position)
+            notifyItemChanged(holder.adapterPosition)
             notifyItemChanged(oldIndex)
         }
-        treatSelectionColor(holder, position)
+        treatSelectionColor(holder, holder.adapterPosition)
     }
 
     private fun treatSelectionColor(holder: PokemonViewHolder, position: Int) {

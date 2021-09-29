@@ -15,8 +15,6 @@ class JohtoGenerator : Generator {
             151,
             "Chikorita",
             PokemonType.GRASS,
-            R.mipmap.chikorita,
-            R.string.pokemon_description_bulbasaur
         )
     )
 }

@@ -1,8 +1,9 @@
-package com.quintatecnica.pokedex.model
+package com.quintatecnica.pokedex.dao
 
 import com.quintatecnica.pokedex.generator.Generator
 import com.quintatecnica.pokedex.generator.JohtoGenerator
 import com.quintatecnica.pokedex.generator.KantoGenerator
+import com.quintatecnica.pokedex.model.Pokemon
 
 class PokemonRepository {
     fun requestPokemon(callback: (List<Pokemon>) -> Unit) {

@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
         val pokemonViewAdapter = PokemonViewAdapter()
         recyclerview.adapter = pokemonViewAdapter
         pokemonViewAdapter.onClick = {
-            pokemon_image.setImageResource(it.picture)
-            pokemon_description.text = getString(it.description)
+            pokemon_image.setImageResource(it.image(this))
+            pokemon_description.text = getString(it.description(this))
         }
     }
 }
