@@ -4,7 +4,7 @@ import com.quintatecnica.pokedex.generator.KantoGenerator
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.equalTo
 import org.hamcrest.core.Is
-import org.junit.Assert
+import org.junit.Assert.*
 import org.junit.Test
 
 class KantoGeneratorTest {
@@ -13,15 +13,12 @@ class KantoGeneratorTest {
 
     @Test
     fun should_ReturnTheNumberOfPokemon_WhenGenerateList() {
-        Assert.assertEquals(numberOfPokemon, KantoGenerator().generate().size)
+        assertEquals(numberOfPokemon, KantoGenerator().generate().size)
     }
 
     @Test
     fun should_ReturnBulbasaur_WhenSearchForNumberOne() {
-        Assert.assertEquals("Bulbasaur", KantoGenerator().generate()[0].name)
-        assertThat(
-            "Bulbasaur",
-            Is(equalTo(KantoGenerator().generate()[0].name))
-        )
+        assertEquals("Bulbasaur", KantoGenerator().generate()[0].name)
+        assertThat("Bulbasaur", Is(equalTo(KantoGenerator().generate()[0].name)))
     }
 }
