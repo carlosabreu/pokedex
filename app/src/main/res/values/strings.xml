@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Pokédex</string>
+    <string name="pokemon_description_missing">Ops, não foi possível encontrar a descrição.</string>
+
     <string name="pokemon_description_bulbasaur">Bulbasaur é um pokémon de tipo grama e veneno se transforma em ivysaur primeiro e em venusaur mais tarde.</string>
     <string name="pokemon_description_ivysaur">Ivysaur é um pokémon de tipo grama e veneno que vem de bulbasaur e pode evoluir para venusaur.</string>
     <string name="pokemon_description_venusaur">Venusaur é um pokémon de tipo grama e veneno que vem de bulbasaur e ivysaur.</string>
