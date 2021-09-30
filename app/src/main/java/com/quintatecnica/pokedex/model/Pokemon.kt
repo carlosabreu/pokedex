@@ -16,7 +16,11 @@ class Pokemon(
         return if (identifier == 0) R.mipmap.unkown_pokemon else identifier
     }
 
-    fun description(context: Context): Int {
+    fun description(context: Context): String {
+        return context.getString(descriptionInt(context))
+    }
+
+    private fun descriptionInt(context: Context): Int {
         val descriptionString = "pokemon_description_${name.lowercase()}"
         val identifier =
             context.resources.getIdentifier(descriptionString, "string", context.packageName)

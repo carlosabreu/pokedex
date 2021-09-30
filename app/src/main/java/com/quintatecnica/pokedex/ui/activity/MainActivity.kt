@@ -7,7 +7,6 @@ import com.quintatecnica.pokedex.R
 import com.quintatecnica.pokedex.ui.adapter.PokemonViewAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         recyclerview.adapter = pokemonViewAdapter
         pokemonViewAdapter.onClick = {
             pokemon_image.setImageResource(it.image(this))
-            pokemon_description.text = getString(it.description(this))
+            pokemon_description.text = it.description(this)
             main_picture_cardView.setCardBackgroundColor(getColor(it.type.colorResource(this)))
         }
     }
