@@ -22,7 +22,7 @@ class PokemonRepositoryTest {
     fun should_NotCallCallback_WhenPokemonNoPokemonIsGenerated() {
         val function: (List<Pokemon>) -> Unit = {}
         val callback = Mockito.mock(function::class.java)
-        val generator = Mockito.mock(KantoGenerator::class.java)
+        val generator = Mockito.spy(KantoGenerator())
         Mockito.`when`(generator.generate()).thenReturn(ArrayList())
         repository.generate(generator, callback)
         Mockito.verify(callback, never())(Mockito.anyList())

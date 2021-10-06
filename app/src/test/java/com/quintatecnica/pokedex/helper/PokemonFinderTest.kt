@@ -32,7 +32,7 @@ class PokemonFinderTest {
     }
 
     @Test
-    fun should_return_whenSearchByDescription() {
+    fun should_returnSquirtle_whenSearchByDescription() {
         val context = Mockito.mock(Context::class.java)
         val pokemonList = PokemonListMock().mockPokemonList(context)
         val result = PokemonFinder().searchByDescription(
@@ -44,4 +44,30 @@ class PokemonFinderTest {
         assertEquals("Squirtle", result[0].name)
     }
 
+    @Test
+    fun should_return_whenSearch() {
+        val context = Mockito.mock(Context::class.java)
+        val pokemonList = PokemonListMock().mockPokemonList(context)
+        val result = PokemonFinder().search(
+            context,
+            pokemonList,
+            "Squirtle"
+        )
+        assertEquals(2, result.size)
+        assertEquals("Squirtle", result[0].name)
+        assertEquals("Wartortle", result[1].name)
+    }
+
+    @Test
+    fun should_returnBulbasaur_whenSearchFor1() {
+        val context = Mockito.mock(Context::class.java)
+        val pokemonList = PokemonListMock().mockPokemonList(context)
+        val result = PokemonFinder().search(
+            context,
+            pokemonList,
+            "1"
+        )
+        assertEquals(1, result.size)
+        assertEquals("Bulbasaur", result[0].name)
+    }
 }
