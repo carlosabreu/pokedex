@@ -1,6 +1,6 @@
 # Pokedex
 
-Este projeto foi feito como exemplo para uma palestra (quinta técnica) sobre testes unitários no Android. O projeto foi feito em kotlin e os slides se encontram na pasta ppt.
+Este projeto foi feito como exemplo para uma palestra (quinta técnica) no Banco do Brasil no dia 28/10/2021, sobre testes unitários no Android. O projeto foi feito em kotlin e os slides se encontram na pasta ppt.
 
 Os exercícios estão resolvidos, mas podem ser refeitos criando as classes com 2 no final. Por exemplo: PokemonRepositoryTest2
 
